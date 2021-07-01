@@ -19,13 +19,13 @@ public class BrowserStackUploadManager {
     this.accesskey = accesskey;
   }
 
-  public AppUploadResponse upload(String appPath) {
+  public synchronized AppUploadResponse upload(String appPath) {
     if (appPath.startsWith("bs://")) return AppUploadResponse.builder().appUrl(appPath).build();
     Optional<AppUploadResponse> appUploadResponse = uploadCache.get(appPath);
     return appUploadResponse.orElseGet(() -> getAppUploadResponse(appPath));
   }
 
-  private AppUploadResponse getAppUploadResponse(String appPath) {
+  private synchronized AppUploadResponse getAppUploadResponse(String appPath) {
     AppUploadResponse appUploadResponse;
     File appFile = new File(appPath);
     appUploadResponse = new BrowserStackAppClient(username, accesskey).uploadApp(appFile);
