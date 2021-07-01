@@ -1,16 +1,16 @@
 package com.testvagrant.ekam.devicemanager;
 
-public class DeviceManagerProvider {
+public class LocalDeviceManagerProvider {
 
   private static DeviceManager deviceManagerProvider;
 
-  private DeviceManagerProvider() {}
+  private LocalDeviceManagerProvider() {}
 
   public static DeviceManager deviceManager() {
     if (deviceManagerProvider == null) {
-      synchronized (DeviceManagerProvider.class) {
+      synchronized (LocalDeviceManagerProvider.class) {
         if (deviceManagerProvider == null) {
-          deviceManagerProvider = new DeviceManagerProvider().get();
+          deviceManagerProvider = new LocalDeviceManagerProvider().get();
         }
       }
     }

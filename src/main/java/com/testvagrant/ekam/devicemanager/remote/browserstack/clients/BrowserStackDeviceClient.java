@@ -9,6 +9,7 @@ import retrofit2.Response;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class BrowserStackDeviceClient extends BrowserstackClient {
@@ -66,7 +67,7 @@ public class BrowserStackDeviceClient extends BrowserstackClient {
                   .platformVersion(device.getOs_version().trim())
                   .platform(platform)
                   .runsOn(deviceType)
-                  .udid("")
+                  .udid(UUID.randomUUID().toString())
                   .build();
 
           devices.add(targetDetails);

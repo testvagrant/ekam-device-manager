@@ -5,6 +5,7 @@ import com.testvagrant.ekam.devicemanager.remote.browserstack.clients.BrowserSta
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static java.util.Collections.shuffle;
 

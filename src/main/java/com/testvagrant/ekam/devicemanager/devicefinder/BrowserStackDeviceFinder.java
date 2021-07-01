@@ -3,10 +3,8 @@ package com.testvagrant.ekam.devicemanager.devicefinder;
 
 import com.testvagrant.ekam.devicemanager.BrowserStackDeviceManagerProvider;
 import com.testvagrant.ekam.devicemanager.DeviceFiltersManager;
-import com.testvagrant.ekam.devicemanager.DeviceManagerProvider;
 import com.testvagrant.ekam.devicemanager.models.DeviceFilters;
 import com.testvagrant.ekam.devicemanager.models.TargetDetails;
-import com.testvagrant.ekam.devicemanager.remote.browserstack.BrowserStackDeviceManager;
 
 import java.util.function.Predicate;
 
@@ -31,7 +29,7 @@ public class BrowserStackDeviceFinder {
   public TargetDetails findDevice() {
     Predicate<TargetDetails> predicate =
             new DeviceFiltersManager().createDeviceFilters(platform, filters);
-    TargetDetails availableDevice = BrowserStackDeviceManagerProvider.deviceManager(username, accesskey).getAvailableDevice(predicate, false);
+    TargetDetails availableDevice = BrowserStackDeviceManagerProvider.deviceManager(username, accesskey).getAvailableDevice(predicate, true);
     return availableDevice;
   }
 }
