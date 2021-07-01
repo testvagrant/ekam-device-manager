@@ -2,11 +2,8 @@ package com.testvagrant.ekam.devicemanager;
 
 import com.testvagrant.ekam.devicemanager.models.TargetDetails;
 import com.testvagrant.ekam.devicemanager.remote.browserstack.clients.BrowserStackDeviceClient;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
 import static java.util.Collections.shuffle;
 
 public class BrowserStackDeviceManagerProvider {

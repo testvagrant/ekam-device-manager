@@ -5,6 +5,7 @@ import com.testvagrant.ekam.devicemanager.remote.browserstack.clients.BrowserSta
 import com.testvagrant.ekam.devicemanager.remote.browserstack.clients.responses.AppUploadResponse;
 
 import java.io.File;
+import java.util.Optional;
 
 public class BrowserStackUploadManager {
 
@@ -20,7 +21,8 @@ public class BrowserStackUploadManager {
 
   public AppUploadResponse upload(String appPath) {
     if (appPath.startsWith("bs://")) return AppUploadResponse.builder().appUrl(appPath).build();
-    return uploadCache.get(appPath).orElse(getAppUploadResponse(appPath));
+    Optional<AppUploadResponse> appUploadResponse = uploadCache.get(appPath);
+    return appUploadResponse.orElseGet(() -> getAppUploadResponse(appPath));
   }
 
   private AppUploadResponse getAppUploadResponse(String appPath) {
