@@ -1,6 +1,5 @@
 package com.testvagrant.ekam.devicemanager;
 
-
 import com.testvagrant.ekam.devicemanager.models.DeviceFilter;
 import com.testvagrant.ekam.devicemanager.models.DeviceFilterOperator;
 import com.testvagrant.ekam.devicemanager.models.EkamSupportedPlatforms;
@@ -17,9 +16,7 @@ public class DeviceFilterPredicates {
 
   public Predicate<TargetDetails> filterByPlatform(String platform) {
     return (targetDetail) ->
-        targetDetail
-            .getPlatform()
-            .equals(EkamSupportedPlatforms.valueOf(platform.toUpperCase()));
+        targetDetail.getPlatform().equals(EkamSupportedPlatforms.valueOf(platform.toUpperCase()));
   }
 
   public Predicate<TargetDetails> filterByModel(DeviceFilter modelFilter) {

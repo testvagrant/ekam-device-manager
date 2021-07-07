@@ -1,4 +1,3 @@
 package com.testvagrant.ekam.devicemanager;
 
-public class Application {
-}
+public class Application {}

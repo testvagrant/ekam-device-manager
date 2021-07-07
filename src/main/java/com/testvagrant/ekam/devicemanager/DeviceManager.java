@@ -1,6 +1,5 @@
 package com.testvagrant.ekam.devicemanager;
 
-
 import com.testvagrant.ekam.devicemanager.models.TargetDetails;
 
 import java.util.function.Predicate;
@@ -26,7 +25,7 @@ public class DeviceManager {
   }
 
   public synchronized TargetDetails getAvailableDevice(
-          Predicate<TargetDetails> deviceFilterPredicate, boolean lock) {
+      Predicate<TargetDetails> deviceFilterPredicate, boolean lock) {
     return deviceCache.get(deviceFilterPredicate, lock);
   }
 

@@ -1,7 +1,7 @@
 package com.testvagrant.ekam.devicemanager.mdb.ios;
 
-import com.testvagrant.ekam.devicemanager.mdb.Mobile;
 import com.testvagrant.ekam.devicemanager.mdb.CommandExecutor;
+import com.testvagrant.ekam.devicemanager.mdb.Mobile;
 import com.testvagrant.ekam.devicemanager.models.DeviceType;
 import com.testvagrant.ekam.devicemanager.models.EkamSupportedPlatforms;
 import com.testvagrant.ekam.devicemanager.models.TargetDetails;
@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static com.testvagrant.ekam.devicemanager.mdb.ios.Commands.*;
-
 
 public class IOS extends Mobile {
 

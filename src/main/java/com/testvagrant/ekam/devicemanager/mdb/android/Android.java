@@ -1,6 +1,5 @@
 package com.testvagrant.ekam.devicemanager.mdb.android;
 
-
 import com.testvagrant.ekam.devicemanager.mdb.CommandExecutor;
 import com.testvagrant.ekam.devicemanager.mdb.Mobile;
 import com.testvagrant.ekam.devicemanager.models.DeviceType;
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.testvagrant.ekam.devicemanager.mdb.android.Commands.*;
-
 
 public class Android extends Mobile {
 

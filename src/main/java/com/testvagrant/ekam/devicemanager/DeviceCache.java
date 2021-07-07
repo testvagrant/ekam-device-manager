@@ -40,7 +40,7 @@ public class DeviceCache extends SharedDataCache<TargetDetails> {
 
   @Override
   public void release(String udid) {
-    if(isAvailable(udid)) return;
+    if (isAvailable(udid)) return;
     try {
       TargetDetails targetDetails = engagedCache.get(udid);
       availableCache.put(targetDetails.getUdid(), targetDetails);
@@ -85,7 +85,7 @@ public class DeviceCache extends SharedDataCache<TargetDetails> {
 
       if (availableDevice.isPresent()) {
         TargetDetails targetDetails = availableDevice.get();
-        if(lock) lock(targetDetails.getUdid());
+        if (lock) lock(targetDetails.getUdid());
         return targetDetails;
       }
     }

@@ -19,6 +19,18 @@ public class BrowserStackUploadManager {
     this.accesskey = accesskey;
   }
 
+  public static BrowserStackUploadManager getInstance(String username, String accesskey) {
+    if (uploadManager == null) {
+      synchronized (BrowserStackUploadManager.class) {
+        if (uploadManager == null) {
+          uploadCache = new DataCache<>();
+          uploadManager = new BrowserStackUploadManager(username, accesskey);
+        }
+      }
+    }
+    return uploadManager;
+  }
+
   public synchronized AppUploadResponse upload(String appPath) {
     if (appPath.startsWith("bs://")) return AppUploadResponse.builder().appUrl(appPath).build();
     Optional<AppUploadResponse> appUploadResponse = uploadCache.get(appPath);
@@ -31,17 +43,5 @@ public class BrowserStackUploadManager {
     appUploadResponse = new BrowserStackAppClient(username, accesskey).uploadApp(appFile);
     uploadCache.put(appPath, appUploadResponse);
     return appUploadResponse;
-  }
-
-  public static BrowserStackUploadManager getInstance(String username, String accesskey) {
-    if (uploadManager == null) {
-      synchronized (BrowserStackUploadManager.class) {
-        if (uploadManager == null) {
-          uploadCache = new DataCache<>();
-          uploadManager = new BrowserStackUploadManager(username, accesskey);
-        }
-      }
-    }
-    return uploadManager;
   }
 }

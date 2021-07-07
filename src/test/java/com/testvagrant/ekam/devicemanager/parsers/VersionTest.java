@@ -10,7 +10,6 @@ import java.util.List;
 
 import static com.testvagrant.ekam.devicemanager.models.DeviceFilterOperator.*;
 
-
 public class VersionTest {
 
   @Test

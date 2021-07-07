@@ -2,8 +2,10 @@ package com.testvagrant.ekam.devicemanager;
 
 import com.testvagrant.ekam.devicemanager.models.TargetDetails;
 import com.testvagrant.ekam.devicemanager.remote.browserstack.clients.BrowserStackDeviceClient;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static java.util.Collections.shuffle;
 
 public class BrowserStackDeviceManagerProvider {
@@ -24,10 +26,6 @@ public class BrowserStackDeviceManagerProvider {
     return deviceManagerProvider;
   }
 
-  public DeviceManager get(List<TargetDetails> targetDetails) {
-    return new DeviceManager(new DeviceCache(targetDetails));
-  }
-
   private static List<TargetDetails> getTargetDetails(String username, String accessKey) {
     List<TargetDetails> browserStackDevices = new ArrayList<>();
     BrowserStackDeviceClient browserStackDeviceClient =
@@ -36,5 +34,9 @@ public class BrowserStackDeviceManagerProvider {
     browserStackDevices.addAll(browserStackDeviceClient.getIosDevices());
     shuffle(browserStackDevices);
     return browserStackDevices;
+  }
+
+  public DeviceManager get(List<TargetDetails> targetDetails) {
+    return new DeviceManager(new DeviceCache(targetDetails));
   }
 }

@@ -17,7 +17,8 @@ public class BrowserStackAppClient extends BrowserstackClient {
   public AppUploadResponse uploadApp(File appFile) {
     System.out.println("Uploading App");
     RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), appFile);
-    MultipartBody.Part multipartBody =MultipartBody.Part.createFormData("file",appFile.getName(),requestFile);
+    MultipartBody.Part multipartBody =
+        MultipartBody.Part.createFormData("file", appFile.getName(), requestFile);
     Call<AppUploadResponse> objectCall = browserStackService.uploadApp(multipartBody);
     return httpClient.execute(objectCall);
   }

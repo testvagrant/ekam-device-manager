@@ -1,6 +1,5 @@
 package com.testvagrant.ekam.devicemanager.mdb;
 
-
 import com.testvagrant.ekam.devicemanager.models.TargetDetails;
 
 import java.util.List;

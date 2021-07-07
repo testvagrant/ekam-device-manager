@@ -35,8 +35,7 @@ public class VersionFiltersTest {
             .build();
 
     Predicate<TargetDetails> predicate =
-            new DeviceFiltersManager()
-                    .createDeviceFilters("android", filters);
+        new DeviceFiltersManager().createDeviceFilters("android", filters);
 
     List<TargetDetails> matchingTargets =
         targets.parallelStream().filter(predicate).collect(Collectors.toList());
@@ -60,8 +59,7 @@ public class VersionFiltersTest {
             .build();
 
     Predicate<TargetDetails> predicate =
-            new DeviceFiltersManager()
-                    .createDeviceFilters("android", filters);
+        new DeviceFiltersManager().createDeviceFilters("android", filters);
 
     List<TargetDetails> matchingTargets =
         targets.parallelStream().filter(predicate).collect(Collectors.toList());
@@ -86,8 +84,7 @@ public class VersionFiltersTest {
             .build();
 
     Predicate<TargetDetails> predicate =
-            new DeviceFiltersManager()
-                    .createDeviceFilters("android", filters);
+        new DeviceFiltersManager().createDeviceFilters("android", filters);
 
     List<TargetDetails> matchingTargets =
         targets.parallelStream().filter(predicate).collect(Collectors.toList());
@@ -113,8 +110,7 @@ public class VersionFiltersTest {
             .build();
 
     Predicate<TargetDetails> predicate =
-            new DeviceFiltersManager()
-                    .createDeviceFilters("android", filters);
+        new DeviceFiltersManager().createDeviceFilters("android", filters);
 
     List<TargetDetails> matchingTargets =
         targets.parallelStream().filter(predicate).collect(Collectors.toList());
@@ -139,8 +135,7 @@ public class VersionFiltersTest {
             .build();
 
     Predicate<TargetDetails> predicate =
-            new DeviceFiltersManager()
-                    .createDeviceFilters("android", filters);
+        new DeviceFiltersManager().createDeviceFilters("android", filters);
 
     List<TargetDetails> matchingTargets =
         targets.parallelStream().filter(predicate).collect(Collectors.toList());
@@ -165,8 +160,7 @@ public class VersionFiltersTest {
             .build();
 
     Predicate<TargetDetails> predicate =
-            new DeviceFiltersManager()
-                    .createDeviceFilters("android", filters);
+        new DeviceFiltersManager().createDeviceFilters("android", filters);
 
     List<TargetDetails> matchingTargets =
         targets.parallelStream().filter(predicate).collect(Collectors.toList());
@@ -191,8 +185,7 @@ public class VersionFiltersTest {
             .build();
 
     Predicate<TargetDetails> predicate =
-            new DeviceFiltersManager()
-                    .createDeviceFilters("android", filters);
+        new DeviceFiltersManager().createDeviceFilters("android", filters);
 
     List<TargetDetails> matchingTargets =
         targets.parallelStream().filter(predicate).collect(Collectors.toList());
