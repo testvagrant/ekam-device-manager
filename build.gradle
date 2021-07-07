@@ -65,7 +65,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-device-manager'
-            version '0.0.1-beta'
+            version '0.0.2-beta'
 
             from components.java
 
