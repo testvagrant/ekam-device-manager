@@ -8,6 +8,7 @@ group 'com.testvagrant.ekam'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -32,7 +33,7 @@ dependencies {
 
     // TestVagrant
     implementation('com.testvagrant.ekam:ekam-commons:0.0.6-beta')
-    implementation('com.testvagrant.ekam:ekam-api:0.0.2-alpha')
+    implementation('com.testvagrant.ekam:ekam-api:0.0.3-alpha')
 
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.7.0')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.0')
@@ -65,7 +66,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-device-manager'
-            version '0.0.2-beta'
+            version '0.0.5-beta'
 
             from components.java
 
