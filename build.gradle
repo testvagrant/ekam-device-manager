@@ -5,7 +5,6 @@ plugins {
 }
 
 group 'com.testvagrant.ekam'
-version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -32,11 +31,11 @@ dependencies {
     testAnnotationProcessor('org.projectlombok:lombok:1.18.20')
 
     // TestVagrant
-    implementation('com.testvagrant.ekam:ekam-commons:0.0.6-beta')
+    implementation('com.testvagrant.ekam:ekam-commons:0.1.0')
     implementation('com.testvagrant.ekam:ekam-api:0.0.3-alpha')
 
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.7.0')
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.0')
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.7.2')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.2')
 }
 
 test {
@@ -66,7 +65,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-device-manager'
-            version '0.0.5-beta'
+            version '0.1.0'
 
             from components.java
 
@@ -106,26 +105,26 @@ def customizePom(pom) {
 
             description 'Ekam Device Manager Project to discover and manage devices'
             name 'Ekam Device Manager'
-            url 'https://gitlab.com/testvagrant/automation-platform/ekam-studio/ekam-device-manager'
+            url 'https://github.com/testvagrant/ekam-device-manager'
             organization {
                 name 'com.testvagrant.ekam'
-                url 'https://gitlab.com/testvagrant/automation-platform/ekam-studio'
+                url 'https://github.com/testvagrant'
             }
             issueManagement {
-                system 'GitLab'
-                url 'https://gitlab.com/testvagrant/automation-platform/ekam-studio/ekam-device-manager/issues'
+                system 'GitHub'
+                url 'https://github.com/testvagrant/ekam-device-manager/issues'
             }
             licenses {
                 license {
                     name 'MIT License'
-                    url 'https://gitlab.com/testvagrant/automation-platform/ekam-studio/ekam-device-manager/-/blob/master/LICENSE'
+                    url 'https://github.com/testvagrant/ekam-device-manager/-/blob/master/LICENSE'
                     distribution 'repo'
                 }
             }
             scm {
-                url 'https://gitlab.com/testvagrant/automation-platform/ekam-studio/ekam-device-manager'
-                connection 'https://gitlab.com/testvagrant/automation-platform/ekam-studio/ekam-device-manager.git'
-                developerConnection 'git@gitlab.com:testvagrant/automation-platform/ekam-studio/ekam-device-manager.git'
+                url 'https://github.com/testvagrant/ekam-device-manager'
+                connection 'https://github.com/testvagrant/ekam-device-manager.git'
+                developerConnection 'git@github.com:testvagrant/ekam-device-manager.git'
             }
             developers {
                 developer {
