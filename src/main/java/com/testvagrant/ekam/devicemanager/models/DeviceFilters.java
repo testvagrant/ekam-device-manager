@@ -11,4 +11,13 @@ public class DeviceFilters {
   @Builder.Default private DeviceFilter platformVersion = new DeviceFilter();
   @Builder.Default private DeviceFilter udid = new DeviceFilter();
   @Builder.Default private DeviceFilter model = new DeviceFilter();
+
+  @Override
+  public String toString() {
+    return "{"
+            + "\"platformVersion\":" + platformVersion
+            + ", \"udid\":" + udid
+            + ", \"model\":" + model
+            + "}";
+  }
 }

@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import static com.testvagrant.ekam.logger.EkamLogger.ekamLogger;
+
 public class DeviceCache extends SharedDataCache<TargetDetails> {
   List<TargetDetails> targetDetailsList;
 
@@ -76,6 +78,7 @@ public class DeviceCache extends SharedDataCache<TargetDetails> {
 
   public synchronized TargetDetails get(Predicate<TargetDetails> predicate, boolean lock) {
     if (!isPresent(predicate)) {
+      ekamLogger().error("Cannot find a matching device");
       throw new NoSuchDeviceException();
     }
 
@@ -119,6 +122,9 @@ public class DeviceCache extends SharedDataCache<TargetDetails> {
     return targetDetailsList.stream()
         .filter(deviceDetails -> deviceDetails.getUdid().equals(udid))
         .findAny()
-        .orElseThrow(() -> new RuntimeException("No Devices Available"));
+        .orElseThrow(() -> {
+          ekamLogger().error("No Devices Available");
+          return new RuntimeException("No Devices Available");
+        });
   }
 }

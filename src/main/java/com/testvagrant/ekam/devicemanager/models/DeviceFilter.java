@@ -18,4 +18,13 @@ public class DeviceFilter {
   public boolean isEmpty() {
     return this.getInclude().isEmpty() && this.getExclude().isEmpty();
   }
+
+  @Override
+  public String toString() {
+    return "{"
+            + "\"include\":" + include
+            + ", \"exclude\":" + exclude
+            + ", \"operator\":\"" + operator + "\""
+            + "}";
+  }
 }

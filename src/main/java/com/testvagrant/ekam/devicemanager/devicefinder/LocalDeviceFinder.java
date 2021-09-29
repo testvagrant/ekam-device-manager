@@ -7,6 +7,8 @@ import com.testvagrant.ekam.devicemanager.models.TargetDetails;
 
 import java.util.function.Predicate;
 
+import static com.testvagrant.ekam.logger.EkamLogger.ekamLogger;
+
 public class LocalDeviceFinder {
 
   private final DeviceFilters filters;
@@ -19,6 +21,7 @@ public class LocalDeviceFinder {
   }
 
   public TargetDetails findDevice() {
+    ekamLogger().info("Finding a device for platform {} with filters {}", platform, filters);
     Predicate<TargetDetails> predicate =
         new DeviceFiltersManager().createDeviceFilters(platform, filters);
     TargetDetails availableDevice =

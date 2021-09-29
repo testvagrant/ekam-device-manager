@@ -34,6 +34,11 @@ dependencies {
     implementation('com.testvagrant.ekam:ekam-commons:0.1.0')
     implementation('com.testvagrant.ekam:ekam-api:0.0.3-alpha')
 
+
+    //logger
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation('com.testvagrant.ekam:ekam-logger:1.0.0')
+
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.7.2')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.2')
 }
@@ -65,7 +70,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-device-manager'
-            version '0.1.0'
+            version '1.0.0'
 
             from components.java
 
@@ -85,6 +90,8 @@ publishing {
             credentials {
                 username System.getenv("sonatypeUsername")
                 password System.getenv("sonatypePassword")
+//                username sonatypeUsername
+//                password sonatypePassword
             }
         }
     }
