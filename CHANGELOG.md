@@ -1,3 +1,5 @@
+# 1.0.1-beta
+* Added capability to override browserstack url
 # 0.0.5-beta
 * QualityKiosk Device Finder
 * QualityKiosk App Upload

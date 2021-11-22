@@ -9,7 +9,7 @@ public class CapabilityMapper {
 
   public Map<String, Object> mapToBrowserStackCaps(String appUrl, TargetDetails targetDetails) {
     Map<String, Object> browserstackCaps = mapToBrowserStackCaps(targetDetails);
-    if (!appUrl.isEmpty()) browserstackCaps.put("app", appUrl);
+    if (!appUrl.isEmpty()) browserstackCaps.put("app", getAppProperty(appUrl));
     return browserstackCaps;
   }
 
@@ -46,5 +46,10 @@ public class CapabilityMapper {
     capsMap.put("Capability_ApiKey", accessKey);
     capsMap.put("Capability_DeviceFullName", targetDetails.getName());
     return capsMap;
+  }
+
+
+  private String getAppProperty(String defaultAppUrl) {
+    return System.getProperty("app_url", defaultAppUrl);
   }
 }
