@@ -12,7 +12,11 @@ import com.testvagrant.ekam.devicemanager.models.TargetDetails;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static com.testvagrant.ekam.logger.EkamLogger.ekamLogger;
 
@@ -83,16 +87,14 @@ public class DeviceCache extends SharedDataCache<TargetDetails> {
     }
 
     if (isAvailable(predicate)) {
-      Optional<TargetDetails> availableDevice =
-          availableCache.asMap().values().stream().filter(predicate).findAny();
-
-      if (availableDevice.isPresent()) {
-        TargetDetails targetDetails = availableDevice.get();
-        if (lock) lock(targetDetails.getUdid());
-        return targetDetails;
-      }
+      List<TargetDetails> availableDevices =
+          availableCache.asMap().values().stream().filter(predicate).collect(Collectors.toList());
+      int randomElementIndex
+              = (int) (ThreadLocalRandom.current().nextInt(availableDevices.size()) % availableDevices.size());
+      TargetDetails targetDetails = availableDevices.get(randomElementIndex);
+      if (lock) lock(targetDetails.getUdid());
+      return targetDetails;
     }
-
     throw new DeviceEngagedException();
   }
 

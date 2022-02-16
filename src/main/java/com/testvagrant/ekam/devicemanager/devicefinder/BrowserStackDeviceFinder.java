@@ -31,7 +31,7 @@ public class BrowserStackDeviceFinder {
         new DeviceFiltersManager().createDeviceFilters(platform, filters);
     TargetDetails availableDevice =
         BrowserStackDeviceManagerProvider.deviceManager(username, accesskey)
-            .getAvailableDevice(predicate, true);
+            .getAvailableDevice(predicate, Boolean.parseBoolean(System.getProperty("cloud.browserstack.cache.lock","true")));
     return availableDevice;
   }
 }

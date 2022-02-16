@@ -32,7 +32,7 @@ public class PCloudyDeviceFinder {
         new DeviceFiltersManager().createDeviceFilters(platform, filters);
     TargetDetails availableDevice =
         PCloudyDeviceManagerProvider.deviceManager(host, username, accesskey)
-            .getAvailableDevice(predicate, true);
+            .getAvailableDevice(predicate, Boolean.parseBoolean(System.getProperty("cloud.pcloudy.cache.lock","true")));
     return availableDevice;
   }
 }
