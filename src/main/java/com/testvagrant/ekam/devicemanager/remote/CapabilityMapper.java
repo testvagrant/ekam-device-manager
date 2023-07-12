@@ -20,6 +20,19 @@ public class CapabilityMapper {
     return capsMap;
   }
 
+  public Map<String, Object> mapToLambdaTestCaps(String appUrl, TargetDetails targetDetails) {
+    Map<String, Object> mapToLambdaTestCaps = mapToLambdaTestCaps(targetDetails);
+    if (!appUrl.isEmpty()) mapToLambdaTestCaps.put("app", getAppProperty(appUrl));
+    return mapToLambdaTestCaps;
+  }
+
+  public Map<String, Object> mapToLambdaTestCaps(TargetDetails targetDetails) {
+    Map<String, Object> capsMap = new HashMap<>();
+    capsMap.put("deviceName", targetDetails.getName());
+    capsMap.put("platformVersion", targetDetails.getPlatformVersion());
+    return capsMap;
+  }
+
   public Map<String, Object> mapToPCloudyCaps(String appUrl, String userName, String accessKey, TargetDetails targetDetails) {
     Map<String, Object> pcloudyCaps = mapToPCloudyCaps(userName, accessKey, targetDetails);
     if (!appUrl.isEmpty()) pcloudyCaps.put("pCloudy_ApplicationName", appUrl);
