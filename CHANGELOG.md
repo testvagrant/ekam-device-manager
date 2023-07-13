@@ -1,3 +1,6 @@
+# 1.0.3
+Add capability to run test on lambdaTest
+
 # 1.0.1-beta
 * Added capability to override browserstack url
 # 0.0.5-beta
