@@ -6,8 +6,8 @@ plugins {
 
 group 'com.testvagrant.ekam'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 17
+targetCompatibility = 17
 
 repositories {
     mavenCentral()
@@ -18,7 +18,7 @@ dependencies {
     implementation('org.apache.commons:commons-lang3:3.12.0')
 
     //Google
-    implementation('com.google.guava:guava:30.1.1-jre')
+    implementation('com.google.guava:guava:32.1.2-jre')
 
     // Square
     implementation('com.squareup.retrofit2:retrofit:2.9.0')
@@ -70,7 +70,7 @@ publishing {
             customizePom(pom)
             groupId 'com.testvagrant.ekam'
             artifactId 'ekam-device-manager'
-            version '1.0.3'
+            version '1.0.4'
 
             from components.java
 

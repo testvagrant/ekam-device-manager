@@ -70,7 +70,6 @@ public class DeviceCache extends SharedDataCache<TargetDetails> {
     availableCache.put(key, targetDetails);
   }
 
-  @Override
   public boolean isPresent(Predicate<TargetDetails> predicate) {
     return anyMatch(cache, predicate);
   }
