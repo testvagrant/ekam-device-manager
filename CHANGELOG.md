@@ -1,3 +1,6 @@
+# 1.0.4
+* Upgraded dependency
+
 # 1.0.3
 Add capability to run test on lambdaTest
 
