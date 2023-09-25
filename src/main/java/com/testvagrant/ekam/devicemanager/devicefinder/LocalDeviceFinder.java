@@ -25,7 +25,7 @@ public class LocalDeviceFinder {
     Predicate<TargetDetails> predicate =
         new DeviceFiltersManager().createDeviceFilters(platform, filters);
     TargetDetails availableDevice =
-        LocalDeviceManagerProvider.deviceManager().getAvailableDevice(predicate);
+        LocalDeviceManagerProvider.deviceManager().getAvailableDevice(predicate, Boolean.parseBoolean(System.getProperty("local.cache.lock","true")));
     return availableDevice;
   }
 }
